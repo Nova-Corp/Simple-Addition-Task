@@ -6,29 +6,47 @@
 //  Copyright © 2021 Success Resource Pte Ltd. All rights reserved.
 //
 
-import XCTest
 @testable import Simple_Addition_Task
+import XCTest
 
 class Simple_Addition_TaskTests: XCTestCase {
+    var inputValidationService: InputValidationService!
+    let homeViewController = HomeViewController()
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    override func setUp() {
+        super.setUp()
+
+        inputValidationService = InputValidationService()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        super.tearDown()
+
+        inputValidationService = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    func test_is_valid_input_number() throws {
+        let stringInput = "Hello"
+        let numberInput = "1"
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        let expectedError = ValidationError.invalidNumber
+        var actualError: ValidationError?
+
+        XCTAssertThrowsError(try inputValidationService.validateNumber(stringInput)) { error in
+            actualError = error as? ValidationError
         }
+
+        XCTAssertEqual(actualError, expectedError)
+        XCTAssertNoThrow(try inputValidationService.validateNumber(numberInput))
     }
 
+    func test_add_two_numbers() {
+        let firstNumber = 1
+        let secondNumner = 2
+        let expectedResult = 3
+
+        let actualResult = homeViewController.addNumber(firstNumber: firstNumber, secondNumber: secondNumner)
+
+        XCTAssertEqual(actualResult, expectedResult)
+    }
 }
