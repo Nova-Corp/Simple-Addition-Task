@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
     }
 
     func addNumber<T: Numeric>(firstNumber: T, secondNumber: T) -> T {
-        return firstNumber + secondNumber + 1
+        return firstNumber + secondNumber
     }
 
     private func setTextFieldToNil() {
