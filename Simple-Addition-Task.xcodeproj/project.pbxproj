@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840CA15C267DA27200E17E18 /* CI.yml in Resources */ = {isa = PBXBuildFile; fileRef = 840CA15B267DA27100E17E18 /* CI.yml */; };
 		84B2E5E6261DCFA8008E7670 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2E5E5261DCFA8008E7670 /* AppDelegate.swift */; };
 		84B2E5E8261DCFA8008E7670 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2E5E7261DCFA8008E7670 /* SceneDelegate.swift */; };
 		84B2E5EA261DCFA8008E7670 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2E5E9261DCFA8008E7670 /* HomeViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840CA15B267DA27100E17E18 /* CI.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = CI.yml; sourceTree = "<group>"; };
 		84B2E5E2261DCFA8008E7670 /* Simple-Addition-Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple-Addition-Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B2E5E5261DCFA8008E7670 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B2E5E7261DCFA8008E7670 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		840CA159267DA1DE00E17E18 /* CI_CD */ = {
+			isa = PBXGroup;
+			children = (
+				840CA15A267DA27100E17E18 /* workflows */,
+			);
+			name = CI_CD;
+			sourceTree = "<group>";
+		};
+		840CA15A267DA27100E17E18 /* workflows */ = {
+			isa = PBXGroup;
+			children = (
+				840CA15B267DA27100E17E18 /* CI.yml */,
+			);
+			name = workflows;
+			path = .github/workflows;
+			sourceTree = SOURCE_ROOT;
+		};
 		84B2E5D9261DCFA8008E7670 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +122,7 @@
 		84B2E5E4261DCFA8008E7670 /* Simple-Addition-Task */ = {
 			isa = PBXGroup;
 			children = (
+				840CA159267DA1DE00E17E18 /* CI_CD */,
 				84B2E619261DD808008E7670 /* Service */,
 				84B2E615261DCFCF008E7670 /* Delegates */,
 				84B2E617261DCFED008E7670 /* ViewController */,
@@ -280,6 +300,7 @@
 			files = (
 				84B2E5F2261DCFAD008E7670 /* LaunchScreen.storyboard in Resources */,
 				84B2E5EF261DCFAD008E7670 /* Assets.xcassets in Resources */,
+				840CA15C267DA27200E17E18 /* CI.yml in Resources */,
 				84B2E5ED261DCFA8008E7670 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
